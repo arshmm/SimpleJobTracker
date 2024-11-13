@@ -1,2 +1,3 @@
 node_modules
 setup.ps1
+.env

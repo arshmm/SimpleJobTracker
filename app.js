@@ -6,9 +6,14 @@ const jobRoutes = require("./routes/jobs");
 
 const app = express();
 
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+
+const dbURL = process.env.DB_URL || "mongodb://localhost:27017/jobTracker";
 // Connect to MongoDB
 mongoose
-  .connect("mongodb://localhost:27017/jobTracker", {
+  .connect(dbURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

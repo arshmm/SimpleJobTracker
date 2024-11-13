@@ -1,10 +1,14 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const jobSchema = new mongoose.Schema({
-    company: String,
-    position: String,
-    status: { type: String, default: 'Pending' },
-    dateApplied: { type: Date, default: Date.now }
+  company: String,
+  position: String,
+  status: { type: String, default: "Pending" },
+  dateApplied: { type: Date, default: Date.now },
 });
 
-module.exports = mongoose.model('Job', jobSchema);
+jobSchema.virtual("formattedDate").get(function () {
+  return this.dateApplied.toISOString().split("T")[0];
+});
+
+module.exports = mongoose.model("Job", jobSchema);

@@ -12,7 +12,8 @@
         <% jobs.forEach(job => { %>
         <li class="job-item">
           <div class="job-item-info">
-            <strong><%= job.company %></strong> - <%= job.position %>
+            <%= job.formattedDate %> - <strong><%= job.company %></strong> - <%=
+            job.position %>
             <span class="status <%= job.status.toLowerCase() %>"
               ><%= job.status %></span
             >
