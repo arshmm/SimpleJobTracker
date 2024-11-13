@@ -5,7 +5,6 @@ const Job = require("../models/Job");
 // Show all jobs
 router.get("/", async (req, res) => {
   const jobs = await Job.find();
-  console.log(jobs[0].formattedDate);
   res.render("index", { jobs });
 });
 
