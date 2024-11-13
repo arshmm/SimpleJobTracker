@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Job Tracker</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Job Applications</h1>
+      <a href="/jobs/new">Add New Job</a>
+      <ul>
+        <% jobs.forEach(job => { %>
+        <li class="job-item">
+          <div class="job-item-info">
+            <strong><%= job.company %></strong> - <%= job.position %>
+            <span class="status <%= job.status.toLowerCase() %>"
+              ><%= job.status %></span
+            >
+          </div>
+          <form
+            action="/jobs/<%= job._id %>/edit"
+            method="GET"
+            style="display: inline; margin: 2px"
+          >
+            <button type="submit" class="edit">Edit</button>
+          </form>
+
+          <form
+            action="/jobs/<%= job._id %>?_method=DELETE"
+            method="POST"
+            style="display: inline; margin: 2px"
+          >
+            <button type="submit" class="delete">Delete</button>
+          </form>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+  </body>
+</html>

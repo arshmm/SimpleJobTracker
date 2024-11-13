@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Add Job</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Add New Job</h1>
+      <div class="form-container">
+        <form action="/jobs" method="POST">
+          <label>Company: <input type="text" name="company" required /></label
+          ><br />
+          <label>Position: <input type="text" name="position" required /></label
+          ><br />
+          <label
+            >Status: <input type="text" name="status" value="Pending" /></label
+          ><br />
+          <button type="submit">Add Job</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

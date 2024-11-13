@@ -1,0 +1,158 @@
+/* Reset some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #0056b3;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+a,
+button {
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Navigation and links */
+a {
+  color: #0056b3;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #003366;
+}
+
+/* Button styles */
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+button.delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+button.delete:hover {
+  background-color: #c82333;
+}
+
+/* Form styling */
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="date"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+form button {
+  width: 100%;
+}
+
+/* Job list styling */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.job-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.job-item:last-child {
+  border-bottom: none;
+}
+
+.job-item strong {
+  font-size: 1.1rem;
+}
+
+.job-item-info {
+  flex-grow: 1;
+  margin-right: 1rem;
+}
+
+/* Status styling */
+.status {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #17a2b8;
+}
+
+.status.pending {
+  color: #ffc107;
+}
+
+.status.interview {
+  color: #007bff;
+}
+
+.status.offer {
+  color: #28a745;
+}
+
+.status.rejected {
+  color: #dc3545;
+}
+
+/* Layout for add/edit forms */
+.form-container {
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-top: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .job-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
