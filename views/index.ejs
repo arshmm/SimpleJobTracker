@@ -17,6 +17,7 @@
             <span class="status <%= job.status.toLowerCase() %>"
               ><%= job.status %></span
             >
+            <%= job.possibleRefOrHiringManager %>
           </div>
           <form
             action="/jobs/<%= job._id %>/edit"

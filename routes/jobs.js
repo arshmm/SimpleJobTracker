@@ -15,8 +15,8 @@ router.get("/new", (req, res) => {
 
 // Create a new job
 router.post("/", async (req, res) => {
-  const { company, position, status } = req.body;
-  await Job.create({ company, position, status });
+  const { company, position, status, possibleRefOrHiringManager } = req.body;
+  await Job.create({ company, position, status, possibleRefOrHiringManager });
   res.redirect("/jobs");
 });
 
@@ -28,8 +28,13 @@ router.get("/:id/edit", async (req, res) => {
 
 // Update a job
 router.put("/:id", async (req, res) => {
-  const { company, position, status } = req.body;
-  await Job.findByIdAndUpdate(req.params.id, { company, position, status });
+  const { company, position, status, possibleRefOrHiringManager } = req.body;
+  await Job.findByIdAndUpdate(req.params.id, {
+    company,
+    position,
+    status,
+    possibleRefOrHiringManager,
+  });
   res.redirect("/jobs");
 });
 
